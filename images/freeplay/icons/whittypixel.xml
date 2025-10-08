@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="whittypixel.png">
+	<!-- Created using the Spritesheet and XML generator -->
+	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
+	<SubTexture name="idle0000" x="43" y="0" width="40" height="39" frameX="0" frameY="-2" frameWidth="40" frameHeight="40"/>
+	<SubTexture name="confirm0000" x="0" y="39" width="40" height="38" frameX="0" frameY="-3" frameWidth="40" frameHeight="40"/>
+	<SubTexture name="confirm0001" x="0" y="0" width="43" height="39" frameX="2" frameY="-2" frameWidth="40" frameHeight="40"/>
+	<SubTexture name="confirm0002" x="40" y="39" width="39" height="38" frameX="-1" frameY="-3" frameWidth="40" frameHeight="40"/>
+	<SubTexture name="confirm-hold0000" x="40" y="39" width="39" height="38" frameX="-1" frameY="-3" frameWidth="40" frameHeight="40"/>
+</TextureAtlas>

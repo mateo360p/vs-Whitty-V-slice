@@ -1,0 +1,48 @@
+import flixel.FlxG;
+import funkin.graphics.FunkinSprite;
+import flixel.tweens.FlxEase;
+import flixel.tweens.FlxTween;
+import flixel.util.FlxTimer;
+import funkin.audio.FunkinSound;
+import funkin.play.PlayState;
+import funkin.play.PlayStatePlaylist;
+import funkin.play.song.Song;
+
+class WhittyOverheadSong extends Song {
+    var hasPlayedCutscene:Bool;
+    public function new() {
+        super('overhead');
+    }
+
+    function onCreate(event:ScriptEvent):Void {
+        super.onCreate(event);
+
+        hasPlayedCutscene = false;
+    }
+
+    function onSongRetry(event:ScriptEvent) {
+        super.onSongRetry(event);
+
+        hasPlayedCutscene = true;
+    }
+
+    public function onCountdownStart(event:CountdownScriptEvent):Void {
+        super.onCountdownStart(event);
+
+        if (!(PlayStatePlaylist.isStoryMode) || PlayState.instance.isChartingMode || hasPlayedCutscene) {
+            return;
+        }
+
+        hasPlayedCutscene = true;
+        event.cancel();
+        startDialogue();
+    }
+
+    function startDialogue() {
+        PlayState.instance.startConversation('overhead');
+    }
+
+    public override function onDialogueEnd() {
+        Countdown.performCountdown();
+    }
+}

@@ -1,0 +1,9 @@
+{
+  "version": "1.0.0",
+  "name": "BACK ALLEY BLITZ ALBUM",
+  "artists": [
+    "sock.clip"
+  ],
+  "albumArtAsset": "freeplay/albumRoll/backAlleyBlitz_album",
+  "albumTitleAsset": "freeplay/albumRoll/backAlleyBlitz-text"
+}

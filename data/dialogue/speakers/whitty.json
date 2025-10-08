@@ -1,0 +1,31 @@
+{
+    "version": "1.0.0",
+    "name": "Whitty",
+    "assetPath": "dialogue/whittyPort",
+    "flipX": false,
+    "isPixel": false,
+    "scale": 1,
+    "offsets": [-330, -50],
+    "animations": [
+        {
+            "name": "talk",
+            "prefix": "Whitty Portrait Normal instance 10000",
+            "offsets": [0, 0],
+            "frameRate": 12,
+            "looped": false
+        },
+        {
+            "name": "talkAlt",
+            "prefix": "Whitty Portrait Agitated instance 10000",
+            "offsets": [0, 0],
+            "frameRate": 12
+        },
+        {
+            "name": "talkCrazy",
+            "prefix": "Whitty Portrait Crazy instance 1",
+            "offsets": [0, 0],
+            "looped": true,
+            "frameRate": 24
+        }
+    ]
+}

@@ -1,0 +1,139 @@
+import flixel.FlxG;
+import funkin.graphics.FunkinSprite;
+import flixel.tweens.FlxEase;
+import flixel.tweens.FlxTween;
+import flixel.util.FlxTimer;
+import funkin.audio.FunkinSound;
+import funkin.play.PlayState;
+import funkin.play.PlayStatePlaylist;
+import funkin.play.song.Song;
+
+class WhittyLoFightSong extends Song {
+    var hasPlayedCutscene:Bool;
+    public function new() {
+        super('lo-fight');
+    }
+
+    function onCreate(event:ScriptEvent):Void {
+        super.onCreate(event);
+
+        hasPlayedCutscene = false;
+    }
+
+    function onSongRetry(event:ScriptEvent) {
+        super.onSongRetry(event);
+
+        hasPlayedCutscene = true;
+    }
+
+    public function onCountdownStart(event:CountdownScriptEvent):Void {
+        super.onCountdownStart(event);
+
+        if (!(PlayStatePlaylist.isStoryMode) || PlayState.instance.isChartingMode || hasPlayedCutscene) {
+            return;
+        }
+
+        hasPlayedCutscene = true;
+        event.cancel();
+        startCutscene();
+    }
+
+    function startDialogue() {
+        PlayState.instance.camCutscene.fade(0xFF000000, 1.3, true, () -> {
+            PlayState.instance.isInCutscene = false;
+            PlayState.instance.mayPauseGame = true;
+            PlayState.instance.startConversation('lo-fight');
+        }, true);
+    }
+
+    public override function onDialogueEnd() {
+        Countdown.performCountdown();
+    }
+
+    function startCutscene() {
+        trace('funny lo-fight Cutscene :o!!!');
+
+        // --- Assets prep
+        PlayState.instance.isInCutscene = true;
+        PlayState.instance.mayPauseGame = false;
+
+        var whitty = PlayState.instance.currentStage.getDad();
+        var bf = PlayState.instance.currentStage.getBoyfriend();
+
+        if (whitty == null || bf == null) { // Just in case
+            PlayState.instance.isInCutscene = false;
+            PlayState.instance.mayPauseGame = true;
+            return;
+        }
+
+        var bfCutOffset:Int = 454;
+        var city = FunkinSound.load(Paths.sound('cutsceneWhitty/city'), 1.0, true);
+        var rip = FunkinSound.load(Paths.sound('cutsceneWhitty/rip'), 1.0, false);
+        var fire = FunkinSound.load(Paths.sound('cutsceneWhitty/fire'), 1.0, false);
+        var BEEP = FunkinSound.load(Paths.sound('cutsceneWhitty/beepboop'), 1.0, false);
+
+        // --- Setting up cutscene
+        city.fadeIn();
+
+        PlayState.instance.resetCamera(false, true);
+        PlayState.instance.cameraFollowPoint.setPosition(whitty.getMidpoint().x - 40, whitty.getMidpoint().y - 300);
+
+        PlayState.instance.camHUD.visible = false;
+
+        PlayState.instance.currentStage.getGirlfriend().visible = false;
+        bf.x += bfCutOffset;
+
+        // --- Helpers
+        function startChit() {
+            whitty.playAnimation("cutscene", true);
+
+            whitty.animation.onFrameChange.add(onBeepWhittying);
+            whitty.animation.onFinish.add(onBeepStoppingShit);
+        }
+
+        function onBeepWhittying(name:String, frameNumber:Int, frameIndex:Int) {
+            if (name != "cutscene") return;
+
+            switch(frameNumber)
+            {
+                case 0:
+                    trace('play city sounds');
+                case 41:
+                    trace('fire');
+                    if (!fire.playing) fire.play();
+                case 34:
+                    trace('paper rip');
+                    if (!rip.playing) rip.play();
+                case 147:
+                    trace('BEEP');
+                    if (!BEEP.playing) {
+                        PlayState.instance.cameraFollowPoint.setPosition(whitty.getMidpoint().x + 400, whitty.getMidpoint().y - 200);
+                        BEEP.play();
+                        bf.playAnimation('singLEFT', true);
+                    }
+                case 154:
+                    if (bf.getCurrentAnimation() != 'idle') bf.playAnimation('idle');
+            }
+        }
+
+        function onBeepStoppingShit(name:String) {
+            if (name != "cutscene") return;
+
+            PlayState.instance.camCutscene.fade(0xFF000000, 1, false, function() {
+                whitty.animation.onFrameChange.remove(onBeepWhittying);
+                whitty.animation.onFinish.remove(onBeepStoppingShit);
+                whitty.playAnimation("idle", true);
+
+                PlayState.instance.currentStage.getGirlfriend().visible = true;
+                bf.x -= bfCutOffset;
+
+                city.fadeOut();
+                startDialogue();
+            }, true);
+        }
+
+        // --- Actual cutscene
+        startChit();
+        PlayState.instance.camCutscene.fade(0xFF000000, 1.5, true, null, true);
+    }
+}
