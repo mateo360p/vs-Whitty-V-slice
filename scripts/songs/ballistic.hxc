@@ -7,6 +7,7 @@ import funkin.audio.FunkinSound;
 import funkin.play.PlayState;
 import funkin.play.PlayStatePlaylist;
 import funkin.play.song.Song;
+import funkin.util.HapticUtil;
 
 class WhittyBallisticSong extends Song {
     var hasPlayedCutscene:Bool;
@@ -88,7 +89,7 @@ class WhittyBallisticSong extends Song {
         //bg.playAnimation("start", true);
 
         PlayState.instance.resetCamera(false, true);
-        PlayState.instance.cameraFollowPoint.setPosition(whitty.getMidpoint().x + 150, whitty.getMidpoint().y - 200);
+        PlayState.instance.cameraFollowPoint.setPosition(whitty.getMidpoint().x + 250, whitty.getMidpoint().y - 200);
 
         PlayState.instance.camHUD.visible = false;
 
@@ -114,7 +115,10 @@ class WhittyBallisticSong extends Song {
                 case 86:
                     if (!mSlam.playing) mSlam.play();
                 case 87:
-                    if (!mThrow.playing) mThrow.play();
+                    if (!mThrow.playing) {
+                        mThrow.play();
+                        HapticUtil.vibrate(0, 0.3, 0.2);
+                    }
                 case 123:
                     if (!rumble.playing) rumble.play();
                 case 128: // Why?
@@ -122,6 +126,7 @@ class WhittyBallisticSong extends Song {
                         soljaBOY.play();
                         bg.playAnimation('cutscene');
                         FlxG.camera.shake(0.01, 3);
+                        HapticUtil.vibrate(0, 0.6, 0.35);
                     }
                 case 135:
                     FlxG.camera.stopFX();
@@ -130,6 +135,7 @@ class WhittyBallisticSong extends Song {
                         TOE.play();
                         FlxG.camera.stopFX();
                         FlxG.camera.shake(0.03, 6);
+                        HapticUtil.vibrate(0, 4, 0.7);
                     }
             }
         }

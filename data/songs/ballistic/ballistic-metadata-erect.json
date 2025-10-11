@@ -1,0 +1,98 @@
+{
+  "version": "2.2.4",
+  "songName": "Ballistic Erect",
+  "artist": "ChuckySkullHead",
+  "divisions": 96,
+  "looped": false,
+  "offsets": {
+    "instrumental": 0,
+    "altInstrumentals": {    },
+    "vocals": {    },
+    "altVocals": {    }
+  },
+  "playData": {
+    "songVariations": [    ],
+    "difficulties": [
+      "erect",
+      "nightmare"
+    ],
+    "characters": {
+      "player": "bf",
+      "girlfriend": "gf-whitty",
+      "opponent": "whitty-crazy",
+      "instrumental": "erect",
+      "altInstrumentals": [      ],
+      "opponentVocals": [
+        "whitty-crazy"
+      ],
+      "playerVocals": [
+        "bf"
+      ]
+    },
+    "stage": "whittyBallisticBG",
+    "noteStyle": "funkin",
+    "ratings": {
+      "nightmare": 18,
+      "erect": 15
+    },
+    "album": "whittyErect",
+    "previewStart": 0,
+    "previewEnd": 15000
+  },
+  "generatedBy": "Friday Night Funkin' - v0.7.5",
+  "timeFormat": "ms",
+  "timeChanges": [
+    {
+      "t": 0,
+      "b": 0,
+      "bpm": 210,
+      "n": 4,
+      "d": 4,
+      "bt": [
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "t": 142857.142857143,
+      "b": 500,
+      "bpm": 220,
+      "n": 4,
+      "d": 4,
+      "bt": [
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "t": 186493.506493506,
+      "b": 660,
+      "bpm": 210,
+      "n": 4,
+      "d": 4,
+      "bt": [
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "t": 212493.506493506,
+      "b": 751,
+      "bpm": 212,
+      "n": 4,
+      "d": 4,
+      "bt": [
+        4,
+        4,
+        4,
+        4
+      ]
+    }
+  ]
+}

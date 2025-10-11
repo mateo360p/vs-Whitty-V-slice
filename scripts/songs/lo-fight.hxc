@@ -67,6 +67,7 @@ class WhittyLoFightSong extends Song {
         }
 
         var bfCutOffset:Int = 454;
+        if (FlxG.onMobile) bfCutOffset = 684;
         var city = FunkinSound.load(Paths.sound('cutsceneWhitty/city'), 1.0, true);
         var rip = FunkinSound.load(Paths.sound('cutsceneWhitty/rip'), 1.0, false);
         var fire = FunkinSound.load(Paths.sound('cutsceneWhitty/fire'), 1.0, false);
@@ -76,7 +77,7 @@ class WhittyLoFightSong extends Song {
         city.fadeIn();
 
         PlayState.instance.resetCamera(false, true);
-        PlayState.instance.cameraFollowPoint.setPosition(whitty.getMidpoint().x - 40, whitty.getMidpoint().y - 300);
+        PlayState.instance.cameraFollowPoint.setPosition(whitty.getMidpoint().x - (FlxG.onMobile ? -60 : 40), whitty.getMidpoint().y - 340);
 
         PlayState.instance.camHUD.visible = false;
 
@@ -107,7 +108,7 @@ class WhittyLoFightSong extends Song {
                 case 147:
                     trace('BEEP');
                     if (!BEEP.playing) {
-                        PlayState.instance.cameraFollowPoint.setPosition(whitty.getMidpoint().x + 400, whitty.getMidpoint().y - 200);
+                        PlayState.instance.cameraFollowPoint.setPosition(whitty.getMidpoint().x + 400, whitty.getMidpoint().y - (FlxG.onMobile ? 300 : 200));
                         BEEP.play();
                         bf.playAnimation('singLEFT', true);
                     }

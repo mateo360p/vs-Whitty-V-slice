@@ -1,0 +1,9 @@
+{
+  "version": "1.0.0",
+  "name": "WHITTY ERECT ALBUM",
+  "artists": [
+    "ChuckySkullHead"
+  ],
+  "albumArtAsset": "freeplay/albumRoll/whittyErect_album",
+  "albumTitleAsset": "freeplay/albumRoll/whittyErect-text"
+}

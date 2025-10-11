@@ -6,6 +6,7 @@ import funkin.play.cutscene.dialogue.DialogueBox;
 import funkin.audio.FunkinSound;
 import flixel.util.FlxTimer;
 import flixel.sound.FlxSound;
+import funkin.util.HapticUtil;
 
 class BallisticConversation extends Conversation
 {
@@ -78,6 +79,7 @@ class BallisticConversation extends Conversation
 				{
                     dummySound.stop();
 					dummySound.play(true);
+                    HapticUtil.vibrate(0, 0.1, 0.2);
 				}
 			}
 		}

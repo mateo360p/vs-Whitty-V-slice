@@ -11,7 +11,7 @@
     "altVocals": {    }
   },
   "playData": {
-    "songVariations": [    ],
+    "songVariations": ["erect"],
     "difficulties": [
       "easy",
       "normal",
@@ -33,7 +33,7 @@
     "stage": "whittyBallisticBG",
     "noteStyle": "funkin",
     "ratings": {
-      "hard": 15,
+      "hard": 13,
       "normal": 10,
       "easy": 7
     },
