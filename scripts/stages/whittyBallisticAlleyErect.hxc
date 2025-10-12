@@ -1,0 +1,46 @@
+import flixel.FlxG;
+import funkin.play.stage.Stage;
+import funkin.play.PlayState;
+import funkin.graphics.FunkinSprite;
+import flixel.math.FlxMath;
+
+class WhittyBallisticAlleyErectStage extends Stage
+{
+    var funnyEff:FunkinSprite;
+    var linkHealth:Bool = false;
+    function new() {
+        super('whittyBallisticErect');
+    }
+
+    override function onCreate(event:ScriptEvent):Void {
+        super.onCreate(event);
+
+        linkHealth = false;
+    }
+
+    function buildStage() {
+        super.buildStage();
+
+        funnyEff = new FunkinSprite(0, 0).loadTexture('whittyStage/thefunnyeffect');
+        funnyEff.setGraphicSize(Std.int(FlxG.width));
+        funnyEff.scrollFactor.set();
+        funnyEff.screenCenter();
+        funnyEff.cameras = [PlayState.instance.camHUD];
+        funnyEff.zIndex = 10000; // Huh
+        funnyEff.alpha = 0;
+        
+        PlayState.instance.add(funnyEff);
+    }
+
+    public function onStepHit(event:SongTimeScriptEvent):Void {
+        //super.onStepHit(event);
+        if(event.step == 1) linkHealth = true;
+    }
+
+    override function onUpdate(event:UpdateScriptEvent)
+    {
+        super.onUpdate(event);
+
+        if (funnyEff != null && linkHealth) funnyEff.alpha = FlxMath.lerp(funnyEff.alpha, PlayState.instance.health / 1.5, 0.5); // Looks, the same, but idc- :D
+    }
+}
