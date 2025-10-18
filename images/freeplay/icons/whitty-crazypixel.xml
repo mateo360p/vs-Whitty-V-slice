@@ -2,12 +2,14 @@
 <TextureAtlas imagePath="whitty-crazypixel.png">
 	<!-- Created using the Spritesheet and XML generator -->
 	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
-	<SubTexture name="idle0000" x="40" y="39" width="40" height="39" frameX="-6" frameY="-2" frameWidth="44" frameHeight="40"/>
-	<SubTexture name="idle0001" x="40" y="0" width="40" height="39" frameX="-6" frameY="-2" frameWidth="44" frameHeight="40"/>
-	<SubTexture name="idle0002" x="0" y="0" width="40" height="39" frameX="-6" frameY="-2" frameWidth="44" frameHeight="40"/>
-	<SubTexture name="idle0003" x="0" y="39" width="40" height="39" frameX="-6" frameY="-2" frameWidth="44" frameHeight="40"/>
-	<SubTexture name="confirm0000" x="0" y="78" width="48" height="24" frameX="2" frameY="-18" frameWidth="44" frameHeight="40"/>
-	<SubTexture name="confirm0001" x="80" y="35" width="42" height="33" frameX="-2" frameY="-9" frameWidth="44" frameHeight="40"/>
-	<SubTexture name="confirm0002" x="80" y="0" width="42" height="35" frameX="-2" frameY="-7" frameWidth="44" frameHeight="40"/>
-	<SubTexture name="confirm-hold0000" x="80" y="0" width="42" height="35" frameX="-2" frameY="-7" frameWidth="44" frameHeight="40"/>
+	<SubTexture name="idle0000" x="91" y="0" width="40" height="39" frameX="-6" frameY="-2" frameWidth="44" frameHeight="40"/>
+	<SubTexture name="idle0001" x="40" y="35" width="40" height="39" frameX="-6" frameY="-2" frameWidth="44" frameHeight="40"/>
+	<SubTexture name="idle0002" x="0" y="35" width="40" height="39" frameX="-6" frameY="-2" frameWidth="44" frameHeight="40"/>
+	<SubTexture name="idle0003" x="0" y="74" width="40" height="39" frameX="-6" frameY="-2" frameWidth="44" frameHeight="40"/>
+	<SubTexture name="confirm0000" x="131" y="0" width="48" height="24" frameX="2" frameY="-17" frameWidth="44" frameHeight="40"/>
+	<SubTexture name="confirm0001" x="83" y="74" width="45" height="33" frameX="1" frameY="-9" frameWidth="44" frameHeight="40"/>
+	<SubTexture name="confirm0002" x="0" y="0" width="46" height="35" frameX="1" frameY="-7" frameWidth="44" frameHeight="40"/>
+	<SubTexture name="confirm0003" x="46" y="0" width="45" height="35" frameX="0" frameY="-7" frameWidth="44" frameHeight="40"/>
+	<SubTexture name="confirm0004" x="40" y="74" width="43" height="35" frameX="-2" frameY="-7" frameWidth="44" frameHeight="40"/>
+	<SubTexture name="confirm-hold0000" x="40" y="74" width="43" height="35" frameX="-2" frameY="-7" frameWidth="44" frameHeight="40"/>
 </TextureAtlas>

@@ -1,56 +1,40 @@
 {
     "props": [
         {
-            "danceEvery": 0,
             "name": "BG",
             "zIndex": 10,
             "position": [-540, -1275],
             "scale": [1, 1],
-            "animType": "sparrow",
             "isPixel": false,
-            "assetPath": "whittyStage/erect/background",
-            "scroll": [1.0, 1.0],
-            "alpha": 1,
-            "animations": []
+            "assetPath": "whittyStage/erect/background"
         },
         {
-            "danceEvery": 0,
             "name": "smog",
             "zIndex": 200,
             "position": [-570, -1100],
             "scale": [1, 1],
-            "animType": "sparrow",
             "isPixel": false,
             "assetPath": "whittyStage/erect/smog",
-            "scroll": [0.9, 0.9],
-            "alpha": 1,
-            "animations": []
+            "scroll": [0.9, 0.9]
         },
         {
-            "danceEvery": 0,
             "name": "volumetric",
             "zIndex": 210,
             "position": [-560, -1075],
             "scale": [1, 1],
-            "animType": "sparrow",
             "isPixel": false,
             "assetPath": "whittyStage/erect/volumetric",
             "scroll": [0.8, 0.8],
-            "alpha": 0.57,
-            "animations": []
+            "alpha": 0.57
         },
         {
-            "danceEvery": 0,
             "name": "FG",
             "zIndex": 220,
             "position": [-620, -1000],
             "scale": [1, 1],
-            "animType": "sparrow",
             "isPixel": false,
             "assetPath": "whittyStage/erect/foreground",
-            "scroll": [0.7, 0.7],
-            "alpha": 1,
-            "animations": []
+            "scroll": [0.7, 0.7]
         }
     ],
     "cameraZoom": 0.65,
@@ -64,7 +48,7 @@
         "gf": {
             "zIndex": 100,
             "position": [800, -30],
-            "cameraOffsets": [60, -100]
+            "cameraOffsets": [0, -100]
         },
         "dad": {
             "zIndex": 110,

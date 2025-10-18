@@ -3,11 +3,15 @@ import funkin.play.stage.Stage;
 import funkin.play.PlayState;
 import funkin.graphics.FunkinSprite;
 import flixel.math.FlxMath;
+import flixel.tweens.misc.VarTween;
+import flixel.tweens.FlxTween;
+import flixel.tweens.FlxEase;
 
 class WhittyBallisticAlleyStage extends Stage
 {
     var funnyEff:FunkinSprite;
-    var linkHealth:Bool = false;
+    var effectTween:VarTween = null;
+
     function new() {
         super('whittyBallisticBG');
     }
@@ -15,7 +19,7 @@ class WhittyBallisticAlleyStage extends Stage
     override function onCreate(event:ScriptEvent):Void {
         super.onCreate(event);
 
-        linkHealth = false;
+        effectTween = null;
     }
 
     function buildStage() {
@@ -26,21 +30,23 @@ class WhittyBallisticAlleyStage extends Stage
         funnyEff.scrollFactor.set();
         funnyEff.screenCenter();
         funnyEff.cameras = [PlayState.instance.camHUD];
-        funnyEff.zIndex = 10000; // Huh
+        funnyEff.zIndex = 1000;
         funnyEff.alpha = 0;
-        
+
         PlayState.instance.add(funnyEff);
     }
 
-    public function onStepHit(event:SongTimeScriptEvent):Void {
-        //super.onStepHit(event);
-        if(event.step == 1) linkHealth = true;
+    public function onBeatHit(event:SongTimeScriptEvent):Void {
+        super.onBeatHit(event);
+        if (funnyEff == null) return;
+
+        effectTween = FlxTween.tween(funnyEff, {alpha: PlayState.instance.health / 2}, 0.4, {ease: FlxEase.quartOut});
     }
 
-    override function onUpdate(event:UpdateScriptEvent)
+    /*override function onUpdate(event:UpdateScriptEvent)
     {
         super.onUpdate(event);
 
         if (funnyEff != null && linkHealth) funnyEff.alpha = FlxMath.lerp(funnyEff.alpha, PlayState.instance.health / 1.5, 0.5); // Looks, the same, but idc- :D
-    }
+    }*/
 }

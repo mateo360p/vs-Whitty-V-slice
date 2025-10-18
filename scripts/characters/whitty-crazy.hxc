@@ -1,0 +1,23 @@
+import flixel.FlxG;
+import funkin.play.character.MultiSparrowCharacter;
+import funkin.play.PlayState;
+import funkin.util.Constants;
+
+class WhittyCrazyCharacter extends MultiSparrowCharacter {
+	function new() {
+		super('whitty-crazy');
+	}
+
+	function onNoteHit(event:HitNoteScriptEvent) {
+		switch (event.note.kind) {
+			case "w-rage":
+				if (!event.note.noteData.getMustHitNote()) {
+					holdTimer = 0;
+					this.playAnimation("crazyScream", true);
+					return;
+				}
+		}
+
+		super.onNoteHit(event);
+	}
+}

@@ -110,6 +110,22 @@ class OverheadConversation extends Conversation
     {
         super.advanceConversation();
 
-        _timer = 0;
+        len = finalLen;
+    }
+
+    // Pausing the talking sounds
+    override public function pauseMusic():Void
+    {
+        super.pauseMusic();
+
+        if(dummySound != null) dummySound.stop();
+    }
+
+    // Resuming the talking sounds
+    override public function resumeMusic():Void
+    {
+        super.resumeMusic();
+
+        if(dummySound != null) dummySound.play();
     }
 }

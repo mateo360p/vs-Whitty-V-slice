@@ -16,7 +16,7 @@
                 {
                     "offsets": [0, 0],
                     "flipY": false,
-                    "frameRate": 24,
+                    "frameRate": 6,
                     "prefix": "background idle",
                     "name": "idle",
                     "looped": true,
@@ -25,30 +25,22 @@
             ]
         },
         {
-            "danceEvery": 0,
             "name": "smog",
             "zIndex": 200,
             "position": [-570, -1100],
             "scale": [1, 1],
-            "animType": "sparrow",
             "isPixel": false,
             "assetPath": "whittyStage/erect/smog",
-            "scroll": [0.9, 0.9],
-            "alpha": 1,
-            "animations": []
+            "scroll": [0.9, 0.9]
         },
         {
-            "danceEvery": 0,
             "name": "volumetric",
             "zIndex": 210,
             "position": [-560, -1075],
             "scale": [1, 1],
-            "animType": "sparrow",
             "isPixel": false,
             "assetPath": "whittyStage/erect/volumetric",
-            "scroll": [0.8, 0.8],
-            "alpha": 1,
-            "animations": []
+            "scroll": [0.8, 0.8]
         },
         {
             "danceEvery": 0,
@@ -61,12 +53,11 @@
             "isPixel": false,
             "assetPath": "whittyStage/erect/foreground-ballistic",
             "scroll": [0.7, 0.7],
-            "alpha": 1,
             "animations": [
                 {
                     "offsets": [0, 0],
                     "flipY": false,
-                    "frameRate": 24,
+                    "frameRate": 6,
                     "prefix": "foreground idle",
                     "name": "idle",
                     "looped": true,
@@ -86,7 +77,7 @@
         "gf": {
             "zIndex": 100,
             "position": [800, -30],
-            "cameraOffsets": [60, -100]
+            "cameraOffsets": [0, -100]
         },
         "dad": {
             "zIndex": 110,

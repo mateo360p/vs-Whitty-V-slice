@@ -1,17 +1,13 @@
 {
     "props": [
         {
-            "danceEvery": 0,
             "name": "BG",
             "zIndex": 10,
             "position": [-420, -1000],
             "scale": [1, 1],
-            "animType": "sparrow",
             "isPixel": false,
             "assetPath": "whittyStage/whittyBG",
-            "scroll": [1.0, 1.0],
-            "alpha": 1,
-            "animations": []
+            "scroll": [1.0, 1.0]
         }
     ],
     "cameraZoom": 0.8,

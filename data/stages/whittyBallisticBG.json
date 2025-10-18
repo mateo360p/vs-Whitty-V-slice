@@ -11,12 +11,11 @@
             "isPixel": false,
             "assetPath": "whittyStage/BallisticBackground",
             "scroll": [1.0, 1.0],
-            "alpha": 1,
             "animations": [
                 {
                     "offsets": [0, 0],
                     "flipY": false,
-                    "frameRate": 24,
+                    "frameRate": 12,
                     "prefix": "Background Whitty Moving0",
                     "name": "idle",
                     "looped": true,
@@ -25,10 +24,10 @@
                 {
                     "offsets": [0, 0],
                     "flipY": false,
-                    "frameRate": 1,
+                    "frameRate": 0,
                     "prefix": "Background Whitty Start0",
                     "name": "start",
-                    "looped": true,
+                    "looped": false,
                     "flipX": false
                 },
                 {
