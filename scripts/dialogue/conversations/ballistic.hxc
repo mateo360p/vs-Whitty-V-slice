@@ -1,13 +1,7 @@
-import flixel.tweens.FlxEase;
-import flixel.tweens.FlxTween;
 import funkin.play.cutscene.dialogue.Conversation;
-import funkin.play.cutscene.dialogue.ConversationState;
-import funkin.play.cutscene.dialogue.DialogueBox;
-import funkin.audio.FunkinSound;
-import flixel.util.FlxTimer;
 import flixel.sound.FlxSound;
-import funkin.util.HapticUtil;
 
+// Yeah, this one too, now fixed buddy!
 class BallisticConversation extends Conversation
 {
     var dummySound:FlxSound;
@@ -27,8 +21,7 @@ class BallisticConversation extends Conversation
         super.onCreate(event);
         dummySound = new FlxSound();
         dummySound.loadEmbedded(Paths.sound('talkWhitty/ballisticTalk'), false, false);
-        dummySound.volume = 0.5;
-        //sound.play();
+        dummySound.volume = 0.24;
     }
 
     override function playSpeakerAnimation():Void {
@@ -36,8 +29,6 @@ class BallisticConversation extends Conversation
         finalLen = currentDialogueLineString.length;
         super.playSpeakerAnimation();
     }
-
-    //function get
 
     var len:Int = 0;
     var finalLen:Int = 0;
@@ -79,7 +70,6 @@ class BallisticConversation extends Conversation
 				{
                     dummySound.stop();
 					dummySound.play(true);
-                    HapticUtil.vibrate(0, 0.1, 0.2);
 				}
 			}
 		}
@@ -114,6 +104,22 @@ class BallisticConversation extends Conversation
     {
         super.advanceConversation();
 
-        _timer = 0;
+        len = finalLen;
+    }
+
+    // Pausing the talking sounds
+    override public function pauseMusic():Void
+    {
+        super.pauseMusic();
+
+        if(dummySound != null) dummySound.stop();
+    }
+
+    // Resuming the talking sounds
+    override public function resumeMusic():Void
+    {
+        super.resumeMusic();
+
+        if(dummySound != null) dummySound.play();
     }
 }

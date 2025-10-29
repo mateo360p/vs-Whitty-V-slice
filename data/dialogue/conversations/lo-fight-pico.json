@@ -1,0 +1,114 @@
+{
+    "version": "1.0.0",
+
+    "backdrop": {
+        "type": "solid",
+        "fadeTime": 2.0,
+        "color": "#B3B3DFd8"
+    },
+
+    "music": {
+        "asset": "",
+        "fadeTime": 0,
+        "looped": false
+    },
+
+    "outro": {
+        "type": "fade",
+        "fadeTime": 1.0
+    },
+
+    "dialogue": [
+        {
+            "speaker": "whitty",
+            "speakerAnimation": "talk",
+            "box": "whitty",
+            "boxAnimation": "idle",
+
+            "text": ["..Who-"]
+        },
+        {
+            "speaker": "whitty_pico",
+            "speakerAnimation": "talk",
+            "box": "whitty",
+            "boxAnimation": "idle",
+
+            "text": ["Hey, chill man."]
+        },
+        {
+            "speaker": "whitty_pico",
+            "speakerAnimation": "talk",
+            "box": "whitty",
+            "boxAnimation": "idle",
+
+            "text": ["Just saw a guy with a bomb for a head and got a little curious."]
+        },
+        {
+            "speaker": "whitty",
+            "speakerAnimation": "talk",
+            "box": "whitty",
+            "boxAnimation": "idle",
+
+            "text": ["Oh, sure..."]
+        },
+        {
+            "speaker": "whitty",
+            "speakerAnimation": "talk",
+            "box": "whitty",
+            "boxAnimation": "idle",
+
+            "text": [
+                "But would both of you just leave me be? I don't want anyone knowin' I'm here."
+            ]
+        },
+        {
+            "speaker": "whitty_pico",
+            "speakerAnimation": "talk",
+            "box": "whitty",
+            "boxAnimation": "idle",
+
+            "text": ["Nah, heard someone's got eyes on you, y'know?"]
+        },
+        {
+            "speaker": "whitty_pico",
+            "speakerAnimation": "talk",
+            "box": "whitty",
+            "boxAnimation": "idle",
+
+            "text": ["I could spread the word for a little cash."]
+        },
+        {
+            "speaker": "whitty",
+            "speakerAnimation": "talkAlt",
+            "box": "whitty",
+            "boxAnimation": "idle",
+
+            "text": [
+                "...Hey, I ain't lookin' for trouble tonight, just leave me alone."
+            ]
+        },
+        {
+            "speaker": "whitty_pico",
+            "speakerAnimation": "talk",
+            "box": "whitty",
+            "boxAnimation": "idle",
+
+            "text": ["Yeah, not a chance."]
+        },
+        {
+            "speaker": "whitty_pico",
+            "speakerAnimation": "talk",
+            "box": "whitty",
+            "boxAnimation": "idle",
+            "text": ["Relax, I ain't here to rat you out. Just got bored."]
+        },
+        {
+            "speaker": "whitty",
+            "speakerAnimation": "talk",
+            "box": "whitty",
+            "boxAnimation": "idle",
+
+            "text": ["..."]
+        }
+    ]
+}

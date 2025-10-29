@@ -1,0 +1,16 @@
+{
+    "version": "1.0.0",
+    "name": "Pico (Whitty Week)",
+    "assetPath": "dialogue/picoPort_whitty",
+    "flipX": false,
+    "isPixel": false,
+    "scale": 1,
+    "offsets": [220, -40],
+    "animations": [
+        {
+            "name": "talk",
+            "prefix": "Pico Portrait Enter instance 10000",
+            "frameRate": 0
+        }
+    ]
+}

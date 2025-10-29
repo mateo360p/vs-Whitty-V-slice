@@ -1,13 +1,7 @@
-import flixel.FlxG;
-import flixel.tweens.FlxEase;
-import flixel.tweens.FlxTween;
 import funkin.play.cutscene.dialogue.Conversation;
-import funkin.play.cutscene.dialogue.ConversationState;
-import funkin.play.cutscene.dialogue.DialogueBox;
-import funkin.audio.FunkinSound;
-import flixel.util.FlxTimer;
 import flixel.sound.FlxSound;
 
+// I FORGOT TO FIX THIS FILE LOL
 class LoFightConversation extends Conversation
 {
     var dummySound:FlxSound;
@@ -27,7 +21,7 @@ class LoFightConversation extends Conversation
         super.onCreate(event);
         dummySound = new FlxSound();
         dummySound.loadEmbedded(Paths.sound('talkWhitty/whittyTalk'), false, false);
-        dummySound.volume = 0.5;
+        dummySound.volume = 0.24;
         //sound.play();
     }
 
@@ -36,8 +30,6 @@ class LoFightConversation extends Conversation
         finalLen = currentDialogueLineString.length;
         super.playSpeakerAnimation();
     }
-
-    //function get
 
     var len:Int = 0;
     var finalLen:Int = 0;
@@ -113,6 +105,22 @@ class LoFightConversation extends Conversation
     {
         super.advanceConversation();
 
-        _timer = 0;
+        len = finalLen;
+    }
+
+    // Pausing the talking sounds
+    override public function pauseMusic():Void
+    {
+        super.pauseMusic();
+
+        if(dummySound != null) dummySound.stop();
+    }
+
+    // Resuming the talking sounds
+    override public function resumeMusic():Void
+    {
+        super.resumeMusic();
+
+        if(dummySound != null) dummySound.play();
     }
 }

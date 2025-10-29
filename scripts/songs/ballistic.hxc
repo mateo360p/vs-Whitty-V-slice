@@ -86,14 +86,10 @@ class WhittyBallisticSong extends Song {
 
         // --- Setting up cutscene
         wind.fadeIn();
-        //bg.playAnimation("start", true);
 
         PlayState.instance.resetCamera(false, true);
         PlayState.instance.cameraFollowPoint.setPosition(whitty.getMidpoint().x + 250, whitty.getMidpoint().y - 200);
-
         PlayState.instance.camHUD.visible = false;
-
-        //PlayState.instance.currentStage.getGirlfriend().visible = false;
 
         // --- Helpers
         function startChit() {
@@ -160,4 +156,22 @@ class WhittyBallisticSong extends Song {
         startChit();
         // PlayState.instance.camCutscene.fade(0xFF000000, 1.5, true, null, true);
     }
+
+    // I don't know if this does something- but hey, why not
+    function fetchAssetPaths():Array<String> 
+	{
+		var results:Array<String> = super.fetchAssetPaths();
+
+        if (!PlayStatePlaylist.isStoryMode) return results; // idk man
+
+		results.push(Paths.sound('cutsceneWhitty/windLmao'));
+        results.push(Paths.sound('cutsceneWhitty/micBreak'));
+        results.push(Paths.sound('cutsceneWhitty/micThrow'));
+        results.push(Paths.sound('cutsceneWhitty/slammin'));
+        results.push(Paths.sound('cutsceneWhitty/ouchMyToe'));
+        results.push(Paths.sound('cutsceneWhitty/souljaboyCrank'));
+        results.push(Paths.sound('cutsceneWhitty/rumb'));
+
+		return results;
+	}
 }

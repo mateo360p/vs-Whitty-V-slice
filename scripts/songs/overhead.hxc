@@ -29,17 +29,19 @@ class WhittyOverheadSong extends Song {
     public function onCountdownStart(event:CountdownScriptEvent):Void {
         super.onCountdownStart(event);
 
-        if (!(PlayStatePlaylist.isStoryMode) || PlayState.instance.isChartingMode || hasPlayedCutscene) {
+        var isPico = (PlayState.instance.currentVariation == 'pico');
+
+        if (!(PlayStatePlaylist.isStoryMode || isPico) || PlayState.instance.isChartingMode || hasPlayedCutscene) {
             return;
         }
 
         hasPlayedCutscene = true;
         event.cancel();
-        startDialogue();
+        startDialogue(isPico);
     }
 
-    function startDialogue() {
-        PlayState.instance.startConversation('overhead');
+    function startDialogue(isPico:Bool) {
+        PlayState.instance.startConversation('overhead' + (isPico ? '-pico' : ''));
     }
 
     public override function onDialogueEnd() {

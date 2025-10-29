@@ -1,7 +1,7 @@
 {
     "version": "1.0.0",
     "name": "Boyfriend (Whitty Week)",
-    "assetPath": "dialogue/boyfriendPort",
+    "assetPath": "dialogue/boyfriendPort_whitty",
     "flipX": false,
     "isPixel": false,
     "scale": 1,
@@ -10,7 +10,7 @@
         {
             "name": "talk",
             "prefix": "BF Portrait Enter instance 10000",
-            "frameRate": 12
+            "frameRate": 0
         }
     ]
 }

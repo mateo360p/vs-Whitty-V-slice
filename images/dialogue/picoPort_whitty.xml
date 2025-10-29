@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="picoPort_whitty.png">
+	<!-- Created copying a file made with some dude's bare hands -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Pico Portrait Enter instance 10000" x="0" y="0" width="430" height="263"/>
+</TextureAtlas>

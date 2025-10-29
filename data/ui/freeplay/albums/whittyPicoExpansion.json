@@ -1,0 +1,10 @@
+{
+  "version": "1.0.0",
+  "name": "WHITTY PICO EXPANSION ALBUM",
+  "artists": [
+    "Plantgamer09",
+    "Neon Studios"
+  ],
+  "albumArtAsset": "freeplay/albumRoll/whittyPicoExpansion_album",
+  "albumTitleAsset": "freeplay/albumRoll/whittyPicoExpansion-text"
+}

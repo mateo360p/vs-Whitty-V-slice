@@ -1,0 +1,124 @@
+import funkin.play.cutscene.dialogue.Conversation;
+import flixel.sound.FlxSound;
+
+class OverheadPicoVerConversation extends Conversation
+{
+    var dummySound:FlxSound;
+    var playDummy:Bool = true;
+    var _timer:Float = 0.0;
+	public var delay:Float = 0.05;
+
+    function new()
+    {
+        super('overhead-pico');
+    }
+
+    function onCreate(event:ScriptEvent):Void {
+        _timer = 0;
+        playDummy = true;
+
+        super.onCreate(event);
+        dummySound = new FlxSound();
+        dummySound.loadEmbedded(Paths.sound('talkWhitty/whittyTalk'), false, false);
+        dummySound.volume = 0.24;
+    }
+
+    override function playSpeakerAnimation():Void {
+        len = 0;
+        finalLen = currentDialogueLineString.length;
+        super.playSpeakerAnimation();
+    }
+
+    var len:Int = 0;
+    var finalLen:Int = 0;
+    // # FUNKIN CREW PLEASE ADD AN OPTION TO DO THIS WITH A DATA FILE PLEASEEEEEEEEEEE
+    // THIS IS, LIKE, AWFUL, AND AN EAR BREAKER
+    override public function update(elapsed:Float):Void
+	{
+        super.update(elapsed);
+		// If the skip key was pressed, complete the animation.
+
+        if (!(currentSpeaker.id == "whitty")) {
+            if(dummySound != null) dummySound.stop();
+            len = 0;
+            finalLen = 0;
+            return;
+        }
+
+        if (len < finalLen)
+        {
+            if (playDummy) _timer += elapsed;
+        } else {
+            if(dummySound != null) dummySound.stop();
+        }
+
+		// If the timer value is higher than the rate at which we should be changing letters, increase or decrease desired string length.
+
+		if (playDummy)
+		{
+			if (playDummy && _timer >= delay) {
+				len += Std.int(_timer / delay);
+				if (len > finalLen) len = finalLen;
+			}
+
+			if ((playDummy && _timer >= delay))
+			{
+				_timer %= delay;
+
+				if (dummySound != null)
+				{
+                    dummySound.stop();
+					dummySound.play(true);
+				}
+			}
+		}
+    }
+
+    override public function onDialogueEnd(event:DialogueScriptEvent):Void
+    {
+        super.onDialogueEnd(event);
+        playDummy = false;
+
+    }
+
+    override function onDestroy(event:ScriptEvent)
+    {
+        if(dummySound != null) dummySound.destroy();
+        super.onDestroy(event);
+    }
+
+    function onSongRetry(event:ScriptEvent) {
+        super.onSongRetry(event);
+        if(dummySound != null) dummySound.destroy();
+        playDummy = true;
+    }
+
+    override public function skipConversation():Void {
+        super.skipConversation();
+
+        _timer = 0;
+    }
+
+    override public function advanceConversation():Void
+    {
+        super.advanceConversation();
+
+        len = finalLen;
+    }
+
+    // Pausing the talking sounds
+    override public function pauseMusic():Void
+    {
+        super.pauseMusic();
+
+        if(dummySound != null) dummySound.stop();
+    }
+
+    // Resuming the talking sounds
+    override public function resumeMusic():Void
+    {
+        super.resumeMusic();
+
+        if(dummySound != null) dummySound.play();
+    }
+}

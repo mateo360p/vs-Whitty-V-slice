@@ -1,0 +1,79 @@
+{
+    "version": "1.0.0",
+
+    "backdrop": {
+        "type": "solid",
+        "fadeTime": 2.0,
+        "color": "#B3B3DFd8"
+    },
+
+    "music": {
+        "asset": "",
+        "fadeTime": 0,
+        "looped": false
+    },
+
+    "outro": {
+        "type": "fade",
+        "fadeTime": 1.0
+    },
+
+    "dialogue": [
+        {
+            "speaker": "whitty",
+            "speakerAnimation": "talkAlt",
+            "box": "whitty",
+            "boxAnimation": "idle",
+
+            "text": ["I see what you are doing."]
+        },
+        {
+            "speaker": "whitty_pico",
+            "speakerAnimation": "talk",
+            "box": "whitty",
+            "boxAnimation": "idle",
+
+            "text": ["What happened", ", got a bit pissy?"]
+        },
+        {
+            "speaker": "whitty",
+            "speakerAnimation": "talkAlt",
+            "box": "whitty",
+            "boxAnimation": "idle",
+
+            "text": ["You're really pushing my limits, dude."]
+        },
+        {
+            "speaker": "whitty_pico",
+            "speakerAnimation": "talk",
+            "box": "whitty",
+            "boxAnimation": "idle",
+
+            "text": ["No balls for another round or what?"]
+        },
+        {
+            "speaker": "whitty",
+            "speakerAnimation": "talkAlt",
+            "box": "whitty",
+            "boxAnimation": "idle",
+
+            "text": ["Well how about you go die in a ditch instead."]
+        },
+        {
+            "speaker": "whitty_pico",
+            "speakerAnimation": "talk",
+            "box": "whitty",
+            "boxAnimation": "idle",
+
+            "text": ["Ha, we'll see who ends up in that ditch."]
+        },
+        {
+            "speaker": "whitty",
+            "speakerAnimation": "talkAlt",
+            "box": "whitty",
+            "boxAnimation": "idle",
+
+            "text": ["...Don't make me do this."]
+        }
+    ]
+}

@@ -1,10 +1,4 @@
-import flixel.tweens.FlxEase;
-import flixel.tweens.FlxTween;
 import funkin.play.cutscene.dialogue.Conversation;
-import funkin.play.cutscene.dialogue.ConversationState;
-import funkin.play.cutscene.dialogue.DialogueBox;
-import funkin.audio.FunkinSound;
-import flixel.util.FlxTimer;
 import flixel.sound.FlxSound;
 
 class OverheadConversation extends Conversation
@@ -26,8 +20,7 @@ class OverheadConversation extends Conversation
         super.onCreate(event);
         dummySound = new FlxSound();
         dummySound.loadEmbedded(Paths.sound('talkWhitty/whittyTalk'), false, false);
-        dummySound.volume = 0.5;
-        //sound.play();
+        dummySound.volume = 0.24;
     }
 
     override function playSpeakerAnimation():Void {

@@ -11,7 +11,7 @@
     "altVocals": {    }
   },
   "playData": {
-    "songVariations": ["erect"],
+    "songVariations": ["erect", "pico"],
     "difficulties": [
       "easy",
       "normal",
