@@ -8,9 +8,11 @@ import funkin.play.PlayState;
 import funkin.play.PlayStatePlaylist;
 import funkin.play.song.Song;
 import funkin.util.HapticUtil;
+import funkin.play.cutscene.VideoCutscene;
 
 class WhittyBallisticSong extends Song {
-    var hasPlayedCutscene:Bool;
+    var hasPlayedCutscene:Int = 0;
+    var isPico:Bool = false;
     public function new() {
         super('ballistic');
     }
@@ -18,34 +20,39 @@ class WhittyBallisticSong extends Song {
     function onCreate(event:ScriptEvent):Void {
         super.onCreate(event);
 
-        if (!(PlayStatePlaylist.isStoryMode) || PlayState.instance.isChartingMode) {
+        isPico = (PlayState.instance.currentVariation == 'pico');
+        hasPlayedCutscene = 0;
+
+        if (!(PlayStatePlaylist.isStoryMode || isPico) || PlayState.instance.isChartingMode) {
             return;
         }
 
-        PlayState.instance.currentStage.getNamedProp('BG').playAnimation("start");
-        PlayState.instance.currentStage.getNamedProp('BG').danceEvery = 0.0;
-        hasPlayedCutscene = false;
+        if (!isPico) {
+            PlayState.instance.currentStage.getNamedProp('BG').playAnimation("start");
+            PlayState.instance.currentStage.getNamedProp('BG').danceEvery = 0.0;
+        }   
+        resetCutsceneState();
     }
 
     function onSongRetry(event:ScriptEvent) {
         super.onSongRetry(event);
 
-        hasPlayedCutscene = true;
+        markCutscenePlayed();
     }
 
     public function onCountdownStart(event:CountdownScriptEvent):Void {
         super.onCountdownStart(event);
 
-        if (!(PlayStatePlaylist.isStoryMode) || PlayState.instance.isChartingMode || hasPlayedCutscene) {
+        if (!(PlayStatePlaylist.isStoryMode || isPico) || PlayState.instance.isChartingMode || canPlayDaSong()) {
             return;
         }
 
-        hasPlayedCutscene = true;
+        markCutscenePlayed();
         event.cancel();
         startCutscene();
     }
 
-    function startDialogue() {
+    function startBfDialogue() {
         PlayState.instance.camCutscene.fade(0xFFFFFFFF, 0.5, true, () -> {
             PlayState.instance.isInCutscene = false;
             PlayState.instance.mayPauseGame = true;
@@ -55,11 +62,29 @@ class WhittyBallisticSong extends Song {
         }, true);
     }
 
+    function startPicoDialogue() {
+        PlayState.instance.startConversation('ballistic-pico');
+    }
+
     public override function onDialogueEnd() {
         Countdown.performCountdown();
     }
 
+    public function startPicoStuff() {
+        if (hasPlayedCutscene > 1) {
+            startPicoDialogue();
+        } else if (hasPlayedCutscene = 1) {
+            trace('fkin ballistic erect video... ON PICO MIX!');
+            VideoCutscene.play(Paths.videos("ballistic"));
+        }
+    }
+
     function startCutscene() {
+        if (isPico) {
+            startPicoStuff();
+            return;
+        }
+
         trace('fkin ballistic Cutscene :o!!!');
 
         // --- Assets prep
@@ -148,7 +173,7 @@ class WhittyBallisticSong extends Song {
 
                 TOE.fadeOut();
                 wind.fadeOut();
-                startDialogue();
+                startBfDialogue();
             }, true);
         }
 
@@ -174,4 +199,18 @@ class WhittyBallisticSong extends Song {
 
 		return results;
 	}
+
+    inline public function canPlayDaSong():Bool {
+        if (isPico) return hasPlayedCutscene > 1;
+        return hasPlayedCutscene > 0;
+    }
+
+    inline public function markCutscenePlayed():Void {
+        if (hasPlayedCutscene > 4) return; // idk
+        hasPlayedCutscene++;
+    }
+
+    inline public function resetCutsceneState():Void {
+        hasPlayedCutscene = 0;
+    }
 }

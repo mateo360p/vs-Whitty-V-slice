@@ -1,7 +1,7 @@
 {
   "version": "2.2.4",
-  "songName": "Ballistic",
-  "artist": "sock.clip",
+  "songName": "Ballistic (Pico Mix)",
+  "artist": "Dipazio",
   "divisions": 96,
   "looped": false,
   "offsets": {
@@ -11,33 +11,33 @@
     "altVocals": {    }
   },
   "playData": {
-    "songVariations": ["erect", "pico"],
+    "songVariations": [    ],
     "difficulties": [
       "easy",
       "normal",
       "hard"
     ],
     "characters": {
-      "player": "bf",
-      "girlfriend": "gf-whitty",
+      "player": "pico-playable",
+      "girlfriend": "nene",
       "opponent": "whitty-crazy",
-      "instrumental": "",
+      "instrumental": "pico",
       "altInstrumentals": [      ],
       "opponentVocals": [
         "whitty-crazy"
       ],
       "playerVocals": [
-        "bf"
+        "pico-playable"
       ]
     },
-    "stage": "whittyBallisticBG",
+    "stage": "whittyBallisticErect",
     "noteStyle": "funkin",
     "ratings": {
-      "hard": 13,
-      "normal": 10,
-      "easy": 7
+      "easy": 8,
+      "normal": 11,
+      "hard": 14
     },
-    "album": "backAlleyBlitz",
+    "album": "whittyPicoExpansion",
     "previewStart": 0,
     "previewEnd": 15000
   },
