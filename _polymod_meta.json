@@ -1,5 +1,5 @@
 {
-  "title": "vs. Whitty - V-Slice Port [v4.0.0]",
+  "title": "vs. Whitty - V-Slice Port [v4.0.1]",
   "description": "",
   "author": "Dipazio",
   "contributors": [
@@ -29,7 +29,7 @@
       "url": "https://www.youtube.com/@NeonStudios763"
     }
   ],
-  "api_version": "0.7.5",
-  "mod_version": "4.0.0",
+  "api_version": "0.8.0",
+  "mod_version": "4.0.1",
   "license": "Apache-2.0"
 }

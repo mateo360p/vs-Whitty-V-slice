@@ -1,0 +1,234 @@
+{
+  "version": "1.0.0",
+  "danceEvery": 1,
+  "startingAnimation": "idle",
+  "name": "Julian",
+  "renderType": "multisparrow",
+  "assetPath": "characters/daWhitty/testis",
+  "offsets": [
+    150,
+    420
+  ],
+  "cameraOffsets": [
+    -90,
+    -430
+  ],
+  "scale": 1,
+  "singTime": 4,
+  "isPixel": false,
+  "flipX": false,
+  "healthIcon": {
+    "id": "whitty_julian",
+    "isPixel": false,
+    "flipX": false,
+    "scale": 1,
+    "offsets": [
+      0,
+      0
+    ]
+  },
+  "animations": [
+    {
+      "name": "idle",
+      "prefix": "whitty idle",
+      "offsets": [
+        181,
+        412
+      ],
+      "frameRate": 24,
+      "looped": false,
+      "flipX": false,
+      "flipY": false
+    },
+    {
+      "name": "singUP",
+      "prefix": "whitty up",
+      "offsets": [
+        237,
+        490
+      ],
+      "frameRate": 24,
+      "looped": false,
+      "flipX": false,
+      "flipY": false
+    },
+    {
+      "name": "singDOWN",
+      "prefix": "whitty down",
+      "offsets": [
+        223,
+        368
+      ],
+      "frameRate": 24,
+      "looped": false,
+      "flipX": false,
+      "flipY": false
+    },
+    {
+      "name": "singLEFT",
+      "prefix": "whitty left",
+      "offsets": [
+        298,
+        438
+      ],
+      "frameRate": 24,
+      "looped": false,
+      "flipX": false,
+      "flipY": false
+    },
+    {
+      "name": "singRIGHT",
+      "prefix": "whitty right",
+      "offsets": [
+        162,
+        406
+      ],
+      "frameRate": 24,
+      "looped": false,
+      "flipX": false,
+      "flipY": false
+    },
+    {
+      "name": "idle-alt",
+      "prefix": "whitty alt idle",
+      "offsets": [
+        141,
+        412
+      ],
+      "frameRate": 24,
+      "looped": false,
+      "flipX": false,
+      "flipY": false,
+      "assetPath": "characters/daWhitty/testis_alt"
+    },
+    {
+      "name": "singUP-alt",
+      "prefix": "whitty alt up",
+      "offsets": [
+        189,
+        460
+      ],
+      "frameRate": 24,
+      "looped": false,
+      "flipX": false,
+      "flipY": false,
+      "assetPath": "characters/daWhitty/testis_alt"
+    },
+    {
+      "name": "singDOWN-alt",
+      "prefix": "whitty alt down",
+      "offsets": [
+        123,
+        179
+      ],
+      "frameRate": 24,
+      "looped": false,
+      "flipX": false,
+      "flipY": false,
+      "assetPath": "characters/daWhitty/testis_alt"
+    },
+    {
+      "name": "singLEFT-alt",
+      "prefix": "whitty alt left",
+      "offsets": [
+        154,
+        387
+      ],
+      "frameRate": 24,
+      "looped": false,
+      "flipX": false,
+      "flipY": false,
+      "assetPath": "characters/daWhitty/testis_alt"
+    },
+    {
+      "name": "singRIGHT-alt",
+      "prefix": "whitty alt right",
+      "offsets": [
+        164,
+        390
+      ],
+      "frameRate": 24,
+      "looped": false,
+      "flipX": false,
+      "flipY": false,
+      "assetPath": "characters/daWhitty/testis_alt"
+    },
+    {
+      "name": "idle-idk",
+      "prefix": "whitty creisi",
+      "offsets": [
+        141,
+        502
+      ],
+      "frameRate": 24,
+      "looped": false,
+      "flipX": false,
+      "flipY": false
+    },
+    {
+      "name": "idle-woa",
+      "prefix": "whitty change idle",
+      "offsets": [
+        141,
+        502
+      ],
+      "frameRate": 24,
+      "looped": false,
+      "flipX": false,
+      "flipY": false,
+      "assetPath": "characters/daWhitty/testis_WOAA"
+    },
+    {
+      "name": "singUP-woa",
+      "prefix": "whitty change up",
+      "offsets": [
+        309,
+        630
+      ],
+      "frameRate": 24,
+      "looped": false,
+      "flipX": false,
+      "flipY": false,
+      "assetPath": "characters/daWhitty/testis_WOAA"
+    },
+    {
+      "name": "singDOWN-woa",
+      "prefix": "whitty change down",
+      "offsets": [
+        133,
+        339
+      ],
+      "frameRate": 24,
+      "looped": false,
+      "flipX": false,
+      "flipY": false,
+      "assetPath": "characters/daWhitty/testis_WOAA"
+    },
+    {
+      "name": "singLEFT-woa",
+      "prefix": "whitty change left",
+      "offsets": [
+        204,
+        507
+      ],
+      "frameRate": 24,
+      "looped": false,
+      "flipX": false,
+      "flipY": false,
+      "assetPath": "characters/daWhitty/testis_WOAA"
+    },
+    {
+      "name": "singRIGHT-woa",
+      "prefix": "whitty change right",
+      "offsets": [
+        154,
+        492
+      ],
+      "frameRate": 24,
+      "looped": false,
+      "flipX": false,
+      "flipY": false,
+      "assetPath": "characters/daWhitty/testis_WOAA"
+    }
+  ]
+}

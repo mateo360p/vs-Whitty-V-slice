@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="idkw.png">
+	<!-- Created using the Spritesheet and XML generator -->
+	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
+	<SubTexture name="change0000" x="3399" y="1281" width="3361" height="1281" frameX="2" frameY="2" frameWidth="3395" frameHeight="1289"/>
+	<SubTexture name="change0001" x="0" y="1287" width="3373" height="1293" frameX="2" frameY="2" frameWidth="3395" frameHeight="1289"/>
+	<SubTexture name="change0002" x="0" y="0" width="3399" height="1287" frameX="2" frameY="2" frameWidth="3395" frameHeight="1289"/>
+	<SubTexture name="change0003" x="3399" y="0" width="3361" height="1281" frameX="2" frameY="2" frameWidth="3395" frameHeight="1289"/>
+	<SubTexture name="idle0000" x="0" y="2580" width="3352" height="1281" frameX="2" frameY="2" frameWidth="3348" frameHeight="1277"/>
+</TextureAtlas>
