@@ -10,6 +10,8 @@ import funkin.play.song.Song;
 import funkin.util.HapticUtil;
 import funkin.play.cutscene.VideoCutscene;
 
+import Date;
+
 class WhittyBallisticSong extends Song {
     var hasPlayedCutscene:Int = 0;
     var isPico:Bool = false;
@@ -19,6 +21,8 @@ class WhittyBallisticSong extends Song {
 
     function onCreate(event:ScriptEvent):Void {
         super.onCreate(event);
+
+        discordRPC();
 
         isPico = (PlayState.instance.currentVariation == 'pico');
         hasPlayedCutscene = 0;
@@ -205,12 +209,27 @@ class WhittyBallisticSong extends Song {
         return hasPlayedCutscene > 0;
     }
 
-    inline public function markCutscenePlayed():Void {
+    inline public function markCutscenePlayed():Void { // dafudge is dis
         if (hasPlayedCutscene > 4) return; // idk
         hasPlayedCutscene++;
     }
 
     inline public function resetCutsceneState():Void {
         hasPlayedCutscene = 0;
+    }
+
+    // fkin adding 2 images to a discord lil window, amazing
+    function discordRPC() {
+        if (FlxG.onMobile || PlayState.instance == null) return;
+
+        var daTime = Date.now().getTime();
+        var daAlbum:String = PlayState.instance.currentChart.album;
+        var daIcon:String = null;
+
+        var dummyDad = PlayState.instance.currentStage.getDad();
+        if (dummyDad != null) daIcon = dummyDad._data?.healthIcon?.id;
+
+        if (daAlbum != null && daAlbum != "") PlayState.instance.discordRPCAlbum = "https://raw.githubusercontent.com/mateo360p/vs-Whitty-V-slice/refs/heads/Port-art/discord/albums/" + daAlbum + ".png?raw=true?t=" + daTime;
+        if (daIcon != null && daIcon != "") PlayState.instance.discordRPCIcon = "https://raw.githubusercontent.com/mateo360p/vs-Whitty-V-slice/refs/heads/Port-art/discord/icons/" + daIcon + ".png?raw=true?t=" + daTime;
     }
 }

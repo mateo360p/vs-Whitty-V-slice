@@ -2,19 +2,19 @@ import funkin.play.cutscene.dialogue.Conversation;
 import funkin.audio.FunkinSound;
 
 // so, yeah this got really smol
-class OverheadConversation extends Conversation
+class BallisticPicoConversation extends Conversation
 {
     var whittySound:FunkinSound;
     var bfSound:FunkinSound;
 
     function new()
     {
-        super('overhead');
+        super('ballistic-pico');
     }
 
     function onCreate(event:ScriptEvent):Void {
         super.onCreate(event);
-        whittySound = FunkinSound.load(Paths.sound('talkWhitty/whittyTalk'), 0.6);
+        whittySound = FunkinSound.load(Paths.sound('talkWhitty/ballisticTalk'), 0.6);
         bfSound = FunkinSound.load(Paths.sound('pixelText'), 0.6);
     }
 

@@ -12,6 +12,7 @@
   },
   "playData": {
     "songVariations": [    ],
+    "stickerPack": "whitty-default",
     "difficulties": [
       "erect",
       "nightmare"

@@ -42,11 +42,4 @@ class WhittyBallisticAlleyStage extends Stage
 
         effectTween = FlxTween.tween(funnyEff, {alpha: PlayState.instance.health / 2}, 0.4, {ease: FlxEase.quartOut});
     }
-
-    /*override function onUpdate(event:UpdateScriptEvent)
-    {
-        super.onUpdate(event);
-
-        if (funnyEff != null && linkHealth) funnyEff.alpha = FlxMath.lerp(funnyEff.alpha, PlayState.instance.health / 1.5, 0.5); // Looks, the same, but idc- :D
-    }*/
 }

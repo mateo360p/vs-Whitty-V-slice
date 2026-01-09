@@ -12,6 +12,7 @@
   },
   "playData": {
     "songVariations": ["erect", "pico"],
+    "stickerPack": "whitty-ballistic-default",
     "difficulties": [
       "easy",
       "normal",

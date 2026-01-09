@@ -12,6 +12,7 @@
     "altVocals": {    }
   },
   "playData": {
+    "stickerPack": "whitty-pico",
     "difficulties": [
       "easy",
       "normal",
