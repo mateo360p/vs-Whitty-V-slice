@@ -16,6 +16,12 @@ class WhittyLowRiseSong extends Song {
         super('low-rise');
     }
 
+    function onCreate(event:ScriptEvent):Void {
+        super.onCreate(event);
+
+        discordRPC();
+    }
+
     // fkin adding 2 images to a discord lil window, amazing
     function discordRPC() {
         if (FlxG.onMobile || PlayState.instance == null) return;

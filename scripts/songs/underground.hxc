@@ -16,6 +16,12 @@ class WhittyUndergroundSong extends Song {
         super('underground');
     }
 
+    function onCreate(event:ScriptEvent):Void {
+        super.onCreate(event);
+
+        discordRPC();
+    }
+
     override function onBeatHit(event:SongTimeScriptEvent):Void {
         super.onBeatHit(event);
 
