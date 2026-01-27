@@ -1,0 +1,23 @@
+import funkin.ui.story.Level;
+import funkin.save.Save;
+import flixel.FlxG;
+import funkin.ui.story.StoryMenuState;
+
+class WhittyBonusWeekLevel extends Level
+{
+  function new() {
+    super('WhittyBonusWeek');
+  }
+
+  override function getSongs():Array<String> {
+    var daSongs:Array<String> = super.getSongs().copy();
+
+    // If has passed the week
+    if (!Std.isOfType(FlxG.state, StoryMenuState) && (Save.instance.hasBeatenLevel('WhittyBonusWeek') || (FlxG.onMobile))) {
+      daSongs.push("low-rise");
+      daSongs.push("underground");
+    }
+
+    return daSongs;
+  }
+}

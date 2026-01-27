@@ -1,0 +1,60 @@
+import flixel.FlxG;
+import funkin.graphics.FunkinSprite;
+import flixel.tweens.FlxEase;
+import flixel.tweens.FlxTween;
+import flixel.util.FlxTimer;
+import funkin.audio.FunkinSound;
+import funkin.play.PlayState;
+import funkin.play.PlayStatePlaylist;
+import funkin.play.song.Song;
+
+import Date;
+
+class WhittyUndergroundSong extends Song {
+    var hasPlayedCutscene:Bool;
+    public function new() {
+        super('underground');
+    }
+
+    override function onBeatHit(event:SongTimeScriptEvent):Void {
+        super.onBeatHit(event);
+
+        switch (event.beat) {
+            case 48:
+                changeDadIdle("-alt");
+            case 240:
+                changeIdle("-woa");
+                PlayState.instance.currentStage.scriptCall("setCraziness", [true]);
+                // changes stage
+            case 304:
+                changeIdle("");
+                changeDadIdle("-crazy");
+                PlayState.instance.currentStage.scriptCall("setCraziness", [false]);
+        }
+    }
+
+    function changeDadIdle(str:String) {
+        PlayState.instance.currentStage.getDad()?.scriptCall("setSuffix", [str]);
+    }
+
+    function changeIdle(str:String) {
+        PlayState.instance.currentStage.getBoyfriend()?.scriptCall("setSuffix", [str]);
+        PlayState.instance.currentStage.getGirlfriend()?.scriptCall("setSuffix", [str]);
+        PlayState.instance.currentStage.getDad()?.scriptCall("setSuffix", [str]);
+    }
+
+    // fkin adding 2 images to a discord lil window, amazing
+    function discordRPC() {
+        if (FlxG.onMobile || PlayState.instance == null) return;
+
+        var daTime = Date.now().getTime();
+        var daAlbum:String = PlayState.instance.currentChart.album;
+        var daIcon:String = null;
+
+        var dummyDad = PlayState.instance.currentStage.getDad();
+        if (dummyDad != null) daIcon = dummyDad._data?.healthIcon?.id;
+
+        if (daAlbum != null && daAlbum != "") PlayState.instance.discordRPCAlbum = "https://raw.githubusercontent.com/mateo360p/vs-Whitty-V-slice/refs/heads/Port-art/discord/albums/" + daAlbum + ".png?raw=true?t=" + daTime;
+        if (daIcon != null && daIcon != "") PlayState.instance.discordRPCIcon = "https://raw.githubusercontent.com/mateo360p/vs-Whitty-V-slice/refs/heads/Port-art/discord/icons/" + daIcon + ".png?raw=true?t=" + daTime;
+    }
+}

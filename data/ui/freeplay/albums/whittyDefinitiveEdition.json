@@ -1,0 +1,10 @@
+{
+  "version": "1.0.0",
+  "name": "WHITTY DEFINITIVE EDITION ALBUM",
+  "artists": [
+    "ChickenSuitGuy"
+  ],
+  "albumArtAsset": "freeplay/albumRoll/whittyDefinitiveEdition_album",
+  "albumTitleAsset": "freeplay/albumRoll/whittyDefinitiveEdition-text",
+  "albumTitleOffsets": [-50, -24]
+}

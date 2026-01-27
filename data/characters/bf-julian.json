@@ -1,0 +1,386 @@
+{
+  "version": "1.0.0",
+  "danceEvery": 1,
+  "startingAnimation": "idle",
+  "name": "Boyfriend (Julian)",
+  "renderType": "multisparrow",
+  "assetPath": "characters/BOYFRIEND",
+  "offsets": [
+    0,
+    0
+  ],
+  "cameraOffsets": [
+    0,
+    0
+  ],
+  "scale": 1,
+  "singTime": 8,
+  "isPixel": false,
+  "flipX": true,
+  "healthIcon": {
+    "id": "bf",
+    "isPixel": false,
+    "flipX": false,
+    "scale": 1,
+    "offsets": [
+      0,
+      0
+    ]
+  },
+  "animations": [
+    {
+      "name": "idle",
+      "prefix": "BF idle dance",
+      "offsets": [
+        -5,
+        0
+      ],
+      "frameRate": 24,
+      "assetPath": "characters/daWhitty/WOAA/bf-WOAA",
+      "flipX": false,
+      "flipY": false
+    },
+    {
+      "name": "singLEFT",
+      "prefix": "BF NOTE LEFT0",
+      "offsets": [
+        12,
+        -6
+      ],
+      "frameRate": 24,
+      "flipX": false,
+      "flipY": false
+    },
+    {
+      "name": "singDOWN",
+      "prefix": "BF NOTE DOWN0",
+      "offsets": [
+        -10,
+        -50
+      ],
+      "frameRate": 24,
+      "flipX": false,
+      "flipY": false
+    },
+    {
+      "name": "singUP",
+      "prefix": "BF NOTE UP0",
+      "offsets": [
+        -29,
+        27
+      ],
+      "frameRate": 24,
+      "flipX": false,
+      "flipY": false
+    },
+    {
+      "name": "singRIGHT",
+      "prefix": "BF NOTE RIGHT0",
+      "offsets": [
+        -38,
+        -7
+      ],
+      "frameRate": 24,
+      "flipX": false,
+      "flipY": false
+    },
+    {
+      "name": "singLEFTmiss",
+      "prefix": "BF NOTE LEFT MISS",
+      "offsets": [
+        12,
+        24
+      ],
+      "frameRate": 24,
+      "flipX": false,
+      "flipY": false
+    },
+    {
+      "name": "singDOWNmiss",
+      "prefix": "BF NOTE DOWN MISS",
+      "offsets": [
+        -11,
+        -19
+      ],
+      "frameRate": 24,
+      "flipX": false,
+      "flipY": false
+    },
+    {
+      "name": "singUPmiss",
+      "prefix": "BF NOTE UP MISS",
+      "offsets": [
+        -29,
+        27
+      ],
+      "frameRate": 24,
+      "flipX": false,
+      "flipY": false
+    },
+    {
+      "name": "singRIGHTmiss",
+      "prefix": "BF NOTE RIGHT MISS",
+      "offsets": [
+        -30,
+        21
+      ],
+      "frameRate": 24,
+      "flipX": false,
+      "flipY": false
+    },
+    {
+      "name": "preAttack",
+      "prefix": "bf pre attack",
+      "offsets": [
+        0,
+        0
+      ],
+      "frameRate": 24,
+      "flipX": false,
+      "flipY": false
+    },
+    {
+      "name": "attack",
+      "prefix": "boyfriend attack",
+      "offsets": [
+        0,
+        0
+      ],
+      "frameRate": 24,
+      "flipX": false,
+      "flipY": false
+    },
+    {
+      "name": "dodge",
+      "prefix": "boyfriend dodge",
+      "offsets": [
+        0,
+        0
+      ],
+      "frameRate": 24,
+      "flipX": false,
+      "flipY": false
+    },
+    {
+      "name": "dodge-hold",
+      "prefix": "boyfriend dodge",
+      "offsets": [
+        0,
+        0
+      ],
+      "frameRate": 24,
+      "looped": true,
+      "frameIndices": [
+        10,
+        11,
+        12
+      ],
+      "flipX": false,
+      "flipY": false
+    },
+    {
+      "name": "hey",
+      "prefix": "BF HEY!!",
+      "offsets": [
+        -3,
+        5
+      ],
+      "frameRate": 24,
+      "flipX": false,
+      "flipY": false
+    },
+    {
+      "name": "hit",
+      "prefix": "BF hit",
+      "offsets": [
+        0,
+        0
+      ],
+      "frameRate": 24,
+      "flipX": false,
+      "flipY": false
+    },
+    {
+      "name": "hit-hold",
+      "prefix": "BF hit",
+      "offsets": [
+        0,
+        0
+      ],
+      "frameRate": 24,
+      "looped": true,
+      "frameIndices": [
+        10,
+        11
+      ],
+      "flipX": false,
+      "flipY": false
+    },
+    {
+      "name": "firstDeath",
+      "prefix": "BF dies",
+      "offsets": [
+        -37,
+        11
+      ],
+      "frameRate": 24,
+      "flipX": false,
+      "flipY": false
+    },
+    {
+      "name": "fakeoutDeath",
+      "prefix": "BF dies",
+      "offsets": [
+        -37,
+        11
+      ],
+      "frameRate": 24,
+      "flipX": false,
+      "flipY": false
+    },
+    {
+      "name": "deathLoop",
+      "prefix": "BF Dead Loop",
+      "offsets": [
+        -37,
+        5
+      ],
+      "frameRate": 24,
+      "looped": true,
+      "flipX": false,
+      "flipY": false
+    },
+    {
+      "name": "deathConfirm",
+      "prefix": "BF Dead confirm",
+      "offsets": [
+        -37,
+        69
+      ],
+      "frameRate": 24,
+      "flipX": false,
+      "flipY": false
+    },
+    {
+      "name": "scared",
+      "prefix": "BF idle shaking",
+      "offsets": [
+        -4,
+        0
+      ],
+      "frameRate": 24,
+      "flipX": false,
+      "flipY": false
+    },
+    {
+      "name": "idle-woa",
+      "prefix": "BF WOA idle dance",
+      "offsets": [
+        10,
+        0
+      ],
+      "frameRate": 24,
+      "flipX": false,
+      "flipY": false
+    },
+    {
+      "name": "singLEFT-woa",
+      "prefix": "BF WOA NOTE LEFT0",
+      "offsets": [
+        10,
+        -7
+      ],
+      "frameRate": 24,
+      "flipX": false,
+      "flipY": false
+    },
+    {
+      "name": "singDOWN-woa",
+      "prefix": "BF WOA NOTE DOWN0",
+      "offsets": [
+        -10,
+        -50
+      ],
+      "frameRate": 24,
+      "flipX": false,
+      "flipY": false
+    },
+    {
+      "name": "singUP-woa",
+      "prefix": "BF WOA NOTE UP0",
+      "offsets": [
+        -28,
+        29
+      ],
+      "frameRate": 24,
+      "flipX": false,
+      "flipY": false
+    },
+    {
+      "name": "singRIGHT-woa",
+      "prefix": "BF WOA NOTE RIGHT0",
+      "offsets": [
+        -38,
+        -7
+      ],
+      "frameRate": 24,
+      "flipX": false,
+      "flipY": false
+    },
+    {
+      "name": "singLEFTmiss-woa",
+      "prefix": "BF WOA NOTE LEFT MISS",
+      "offsets": [
+        11,
+        -1
+      ],
+      "frameRate": 24,
+      "flipX": false,
+      "flipY": false
+    },
+    {
+      "name": "singDOWNmiss-woa",
+      "prefix": "BF WOA NOTE DOWN MISS",
+      "offsets": [
+        -11,
+        -50
+      ],
+      "frameRate": 24,
+      "flipX": false,
+      "flipY": false
+    },
+    {
+      "name": "singUPmiss-woa",
+      "prefix": "BF WOA NOTE UP MISS",
+      "offsets": [
+        -31,
+        29
+      ],
+      "frameRate": 24,
+      "flipX": false,
+      "flipY": false
+    },
+    {
+      "name": "singRIGHTmiss-woa",
+      "prefix": "BF WOA NOTE RIGHT MISS",
+      "offsets": [
+        -33,
+        -7
+      ],
+      "frameRate": 24,
+      "flipX": false,
+      "flipY": false
+    },
+    {
+      "name": "hey-woa",
+      "prefix": "BF WOA HEY!!",
+      "offsets": [
+        5,
+        8
+      ],
+      "frameRate": 24,
+      "flipX": false,
+      "flipY": false
+    }
+  ]
+}

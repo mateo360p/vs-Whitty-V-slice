@@ -1,0 +1,72 @@
+import flixel.FlxG;
+import funkin.play.stage.Stage;
+import funkin.play.PlayState;
+import funkin.graphics.FunkinSprite;
+import flixel.math.FlxMath;
+import flixel.tweens.misc.VarTween;
+import flixel.tweens.FlxTween;
+import flixel.tweens.FlxEase;
+import flixel.group.FlxTypedSpriteGroup;
+
+class WhittyJulianAlleyStage extends Stage
+{
+    var hasBeenCrazy:Bool = false;
+
+    function new() {
+        super('whittyJulianAlley');
+    }
+
+	override function onCreate(event:ScriptEvent):Void
+	{
+		super.onCreate(event);
+
+        hasBeenCrazy = false;
+		setCraziness(false);
+	}
+
+	override function onSongRetry(event:ScriptEvent):Void {
+		super.onSongRetry(event);
+
+        hasBeenCrazy = false;
+		setCraziness(false);
+	}
+
+    override function onGameOver(event:ScriptEvent):Void
+    {
+        hasBeenCrazy = false;
+        setCraziness(false);
+        super.onGameOver(event);
+    }
+
+    public function setCraziness(in:Bool) {
+        var anim:String = (in ? "change" : "idle");
+        getNamedProp('BG').playAnimation(anim);
+        getNamedProp('FG').playAnimation(anim);
+
+		var iconBF:HealthIconData = {
+			id: (in ? "whitty_bf-woaa" : "bf"),
+			scale: 1.0,
+			flipX: true,
+			isPixel: false,
+			offsets: [0, 0],
+		};
+
+        var iconJ:HealthIconData = {
+			id: (in ? "whitty_julian-woaa" : (hasBeenCrazy ? "whitty_julian-crazy" : "whitty_julian")),
+			scale: 1.0,
+			flipX: false,
+			isPixel: false,
+			offsets: [0, 0],
+		};
+
+		if (PlayState.instance.iconP1 != null && PlayState.instance.iconP2 != null) {
+			trace('Applying crazy health icons on Julian Stage');
+			PlayState.instance.iconP1.configure(iconBF);
+            PlayState.instance.iconP2.configure(iconJ);
+        } else {
+			trace("WHAT: a health icon is NULL?");
+		}
+
+        if (in) hasBeenCrazy = true;
+    }
+}

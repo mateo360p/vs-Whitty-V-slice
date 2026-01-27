@@ -1,0 +1,283 @@
+{
+  "version": "1.0.0",
+  "danceEvery": 1,
+  "startingAnimation": "idle",
+  "name": "Girlfriend (Julian)",
+  "renderType": "multisparrow",
+  "assetPath": "characters/daWhitty/julian/gf_julian",
+  "offsets": [
+    50,
+    -40
+  ],
+  "cameraOffsets": [
+    0,
+    0
+  ],
+  "scale": 1,
+  "singTime": 4,
+  "isPixel": false,
+  "flipX": false,
+  "healthIcon": {
+    "id": "gf",
+    "isPixel": false,
+    "flipX": false,
+    "scale": 1,
+    "offsets": [
+      0,
+      0
+    ]
+  },
+  "animations": [
+    {
+      "name": "sad",
+      "prefix": "gf sad0",
+      "offsets": [
+        -20,
+        -12
+      ],
+      "frameRate": 24,
+      "frameIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "assetPath": "characters/daWhitty/WOAA/gf-WOAA",
+      "flipX": false,
+      "flipY": false
+    },
+    {
+      "name": "drop70",
+      "prefix": "gf sad0",
+      "offsets": [
+        -20,
+        -12
+      ],
+      "frameRate": 24,
+      "frameIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "flipX": false,
+      "flipY": false
+    },
+    {
+      "name": "danceLeft",
+      "prefix": "GF Dancing Beat",
+      "offsets": [
+        0,
+        0
+      ],
+      "frameRate": 24,
+      "frameIndices": [
+        30,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "flipX": false,
+      "flipY": false
+    },
+    {
+      "name": "danceRight",
+      "prefix": "GF Dancing Beat",
+      "offsets": [
+        0,
+        0
+      ],
+      "frameRate": 24,
+      "frameIndices": [
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "flipX": false,
+      "flipY": false
+    },
+    {
+      "name": "sad-woa",
+      "prefix": "gf WOA sad0",
+      "offsets": [
+        -20,
+        -12
+      ],
+      "frameRate": 24,
+      "frameIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "flipX": false,
+      "flipY": false
+    },
+    {
+      "name": "drop70-woa",
+      "prefix": "gf WOA sad0",
+      "offsets": [
+        -20,
+        -12
+      ],
+      "frameRate": 24,
+      "frameIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "flipX": false,
+      "flipY": false
+    },
+    {
+      "name": "danceLeft-woa",
+      "prefix": "GF WOA Dancing Beat",
+      "offsets": [
+        0,
+        0
+      ],
+      "frameRate": 24,
+      "frameIndices": [
+        30,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "flipX": false,
+      "flipY": false
+    },
+    {
+      "name": "danceRight-woa",
+      "prefix": "GF WOA Dancing Beat",
+      "offsets": [
+        0,
+        0
+      ],
+      "frameRate": 24,
+      "frameIndices": [
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "flipX": false,
+      "flipY": false
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+import flixel.FlxG;
+import funkin.play.character.MultiSparrowCharacter;
+import funkin.play.PlayState;
+import funkin.util.Constants;
+import StringTools;
+import funkin.data.character.CharacterDataParser;
+import flixel.group.FlxTypedSpriteGroup;
+
+class WhittyJulianCharacter extends MultiSparrowCharacter {
+	public var animSuffix:String = "";
+	function new() {
+		super('whitty_julian');
+	}
+
+	override function onCreate(event:ScriptEvent):Void
+	{
+		super.onCreate(event);
+
+		setSuffix("");
+	}
+
+	override function onSongRetry(event:ScriptEvent):Void {
+		super.onSongRetry(event);
+
+		setSuffix("");
+	}
+
+	override function playSingAnimation(dir:NoteDirection, miss:Bool = false, ?suffix:String = ''):Void
+	{
+		super.playSingAnimation(dir, miss, animSuffix + suffix);
+	}
+
+	function onNoteHit(event:HitNoteScriptEvent) {
+		switch (event.note.kind) {
+			case "w-alt":
+				if (!event.note.noteData.getMustHitNote()) {
+					holdTimer = 0;
+					this.playSingAnimation(event.note.noteData.getDirection(), false, 'alt');
+					return;
+				}	
+		}
+
+		super.onNoteHit(event);
+	}
+
+	public function setSuffix(suffix:String) {
+		animSuffix = StringTools.replace(suffix, "-", "");
+		this.idleSuffix = suffix;
+
+		if (animSuffix == suffix) return;
+
+		var dumString:String = ""; // simulates changing the character-
+		if (suffix == "-crazy") dumString = "whitty_julian-crazy";
+		else dumString = "whitty_julian";
+
+		var healthIconData:HealthIconData =
+		{
+			id: dumString,
+			scale: 1.0,
+			flipX: false,
+			isPixel: false,
+			offsets: [0, 0],
+		};
+
+		if (PlayState.instance.iconP2 != null) {
+			trace('Applying Julian health icon with variant:' + animSuffix);
+			PlayState.instance.iconP2.configure(healthIconData);
+        } else {
+			trace("WHAT: The P2 icon is NULL?");
+		}
+	}
+}

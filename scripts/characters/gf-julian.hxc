@@ -1,0 +1,35 @@
+import flixel.FlxG;
+import funkin.play.character.MultiSparrowCharacter;
+import funkin.play.PlayState;
+import funkin.util.Constants;
+import StringTools;
+import funkin.data.character.CharacterDataParser;
+
+class WhittyJulianGirlfriendCharacter extends MultiSparrowCharacter {
+	public var animSuffix:String = "";
+	function new() {
+		super('gf-julian');
+	}
+
+	override function onCreate(event:ScriptEvent):Void
+	{
+		super.onCreate(event);
+
+		setSuffix("");
+	}
+
+	override function onSongRetry(event:ScriptEvent):Void {
+		super.onSongRetry(event);
+
+		setSuffix("");
+	}
+
+	override function playAnimation(name:String, restart:Bool, ignoreOther:Bool) {
+		super.playAnimation(name + animSuffix, restart, ignoreOther);
+	}
+
+	public function setSuffix(suffix:String) {
+		animSuffix = suffix;
+		this.dance(true);
+	}
+}
